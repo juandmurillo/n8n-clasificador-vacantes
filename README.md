@@ -4,22 +4,8 @@ Recibe el texto de una vacante por webhook o por chat, extrae sus datos con un L
 
 ## Flujo
 
-```mermaid
-flowchart LR
-    A[Webhook POST] --> B[Validar entrada]
-    A2[Chat] --> B
-    B --> C{¿Entrada válida?}
-    C -- no --> R400[Responder 400]
-    C -- sí --> D[Analizar con LLM]
-    D -- error --> R502a[Responder 502]
-    D --> E[Interpretar respuesta]
-    E --> F{¿JSON válido?}
-    F -- no --> R502b[Responder 502]
-    F -- sí --> G[Separar campos]
-    G --> H[Guardar en Google Sheets]
-    H -- error --> R502c[Responder 502]
-    H --> R200[Responder 200]
-```
+<img width="1536" height="553" alt="image" src="https://github.com/user-attachments/assets/22f5b82c-0e9c-435a-9dde-59014c8d4a73" />
+
 
 ## Cómo correrlo
 
